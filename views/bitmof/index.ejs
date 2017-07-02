@@ -1,0 +1,17 @@
+
+
+<h2> List of all Digital Currencies we offer </h2>
+
+<ul>
+<% bitmofObjects.forEach((onebitmof) => { %>
+  <li> <h3> <%= onebitmof.coinName %>  </h3>
+     <img src = "<%= onebitmof.coinImage %>"> </img>
+     <br>
+     <p> Coin Ticker <%= onebitmof.coinTicker  %>  </p>
+     <br>
+       <p> It was founded in <%= onebitmof.coinDate  %>  </p>
+       <br>
+      <p>  Founder(s) <%= onebitmof.coinFounder %>  </p>
+<% });  %>
+</li>
+  </ul>
