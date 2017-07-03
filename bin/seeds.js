@@ -16,7 +16,7 @@ const bitmofArray = [
        coinName: ' Ethereum ',
        coinTicker: 'ETH',
        coinDate: 2015,
-       coinImage:'https://pbs.twimg.com/profile_images/745670025491648512/fZ7N-rg0.jpg',
+       coinImage:'https://cdn.worldvectorlogo.com/logos/ethereum-1.svg',
        coinFounder: " Vitalik Buterin "
 
      },

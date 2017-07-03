@@ -1,8 +1,131 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #7B2336;
+
+}
+.container-fluid{
+color: white;
 }
 
 a {
   color: #00B7FF;
+}
+
+.top{
+  width:95%;
+  height: 30%;
+  border: solid;
+  border-color: white;
+  border-style: ridge;
+  border-radius: 1%;
+  font: Helvetica;
+
+}
+.list{
+  color: white;
+  width: 100%;
+}
+#logo{
+  height: 100px;
+  width: 110px;
+  /*display: inline-block;*/
+}
+
+h3 {
+  display: inline;
+}
+.coins{
+padding: 30px;
+margin-right: 20px;
+}
+.signUp{
+  color: white;
+}
+
+#title1 {
+  font-size: 50px;
+  padding-left: 350px;
+  position: relative;
+  top: 150px;
+  padding-left: 271px;
+}
+
+#sentence {
+  position: relative;
+    padding-right: 43px;
+    padding-left: 354px;
+    top: 170px;
+}
+.box{
+  justify-content: center;
+    max-width: 520px;
+    padding: 20px;
+    margin-bottom: 0px;
+    background-color: #5B1A30;
+    border-radius: 8px;
+    width: 458px;
+    height:95px;
+    top: 220px;
+    margin-left: 425px;
+    position: relative;
+    padding-top: 31px;
+}
+
+#enter{
+  height:55px;
+  width: 280px;
+  background-color: white;
+  border-radius: 8px;
+  color: grey;
+  position: relative;
+  bottom: 30px;
+
+}
+
+#getStarted {
+  width: 128.5px;
+  height:50px;
+  background-color: #7B2336;
+  position: relative;
+  margin-left: 296px;
+  bottom: 53px;
+  border-radius: 8px;
+  color: white;
+  top: -81px;
+  border-color: white;
+}
+#enterText{
+bottom: -20px;
+position: relative;
+left: 35px;
+}
+
+#little {
+  font-size: 10px;
+  position: relative;
+  left: 60px;
+}
+
+.footer {
+  width: 102%;
+  height: 100px;
+  background-color: white;
+  position: relative;
+  top: 410px;
+  right: 25px;
+  border-color: white;
+  border: solid 2px;
+  border-radius: 8px;
+  left: -34px;
+
+}
+
+
+
+#a2{
+  height: 100px;
+  width:400px;
+  margin-left: 490px;
+
 }
