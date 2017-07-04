@@ -11,13 +11,36 @@
   </head>
   <body>
     <h1> BITMOF </h1>
-    <a href="/"> Home </a>
     <br>
-    <a href="/routes/login"> Login Now <a/>
-      <br>
-    <a href="/bitmof"> Digital Currencies List </a>
-    <br>
-    <a href="/bitmof/new"> Add a New Coin </a>
-    <%- body %>
+    <nav>
+      <ul>
+        <li> <a href="/"> Home </a> </li>
+          <% if (typeof currentUser === 'object') { %>
+            <!-- If we got the logged in user variable -->
+            <br>
+          <li><a href="/bitmof"> Your Portofolio</a></li>
+            <br>
+          <li><a href="/bitmof/new"> Add a Digital Currency </a></li>
+            <br>
+            <li><a href="/logout"> Log Out </a></li>
+            <br>
+        <% } else { %>
+            <li><a href="/signup"> Sign Up </a></li>
+            <br>
+          <li><a href="/login"> Log In </a> </li>
+            <br>
+          <li><a href="/bitmof"> Digital Currencies List </a></li>
+            <br>
+          <li><a href="/bitmof/new"> Add a New Coin </a></li>
+            <%- body %>
+        <% } %>
+      </ul>
+        </nav>
+</style>
+
+
+
+
+  </style>
   </body>
-</html>
+  </html>

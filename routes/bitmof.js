@@ -2,18 +2,57 @@ const express = require('express');
 
 const BitmofModel = require('../models/bitmof.js');
 
+var request = require('request');
+
 const router = express.Router();
 
 console.log('1');
+
 router.get('/bitmof', (req, res, next) => {
   BitmofModel.find((err, bitmofResults) => {
     if (err) {
       next(err);
       return;
     }
-    console.log('2');
+
+    pricesArray = [];
+
+    bitmofResults.forEach((coin) => { //loop through all db coins
+
+      let coinName = coin.coinName;
+    //API request
+      request(
+    `https://api.coinmarketcap.com/v1/ticker/` + coinName + `/`,
+    (error, response, body) => {
+        if (error) {
+          console.log('FUCK', error);
+          return;
+        }
+
+        let prices = JSON.parse(body);
+        console.log(prices[0].price_usd);
+
+        pricesArray.push('prices');
+
+
+
+
+// pricesArray.push(body);
+// pricesArray.push(body[0]);
+// pricesArray.push(body.price_usd);
+
+      // console.log(pricesArray);
+
+        // console.log(response);
+      }
+        );
+    });
+
+
+
     res.render('./bitmof/index.ejs',
-  { bitmofObjects: bitmofResults }
+  { bitmofObjects: bitmofResults, 
+  }
 );
   });
 });

@@ -8,6 +8,7 @@ const myExchange = new Schema({
     coinDate: {type: Number},
     coinImage:{type: String},
     coinFounder:{type: String}
+    
 });
 
 const BitmofModel = mongoose.model('bitmof', myExchange);

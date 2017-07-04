@@ -6,7 +6,15 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
+const session      = require ('express-session');
+const passport     = require('passport');
 
+
+require('dotenv').config();
+
+require('./config/passport-config.js');
+
+// mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connect('mongodb://localhost/bitmof');
 const app = express();
@@ -26,6 +34,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
+app.use(session({
+  secret: "iudhskhfb",
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
+
 
 const index = require('./routes/index');
 app.use('/', index);
@@ -36,6 +58,8 @@ app.use('/', bitmof);
 var users = require('./routes/users');
 app.use('/', users);
 
+const myAuthRoutes = require('./routes/auth-routes.js');
+app.use('/', myAuthRoutes);
 
 
 
