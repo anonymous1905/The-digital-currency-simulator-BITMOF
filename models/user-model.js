@@ -16,7 +16,9 @@ const myUserSchema = new Schema(
     googleId: { type: String },
 
     // FACEBOOK users ------------------
-    facebookId: { type: String }
+    facebookId: { type: String },
+
+    simMoney: {type:Number,default:20000}
   },
 
   {   // 2nd argument -> additional settings (optional)

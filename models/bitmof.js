@@ -7,8 +7,9 @@ const myExchange = new Schema({
     coinTicker: {type: String},
     coinDate: {type: Number},
     coinImage:{type: String},
-    coinFounder:{type: String}
-    
+    coinFounder:{type: String},
+    coinPrice: {type:Number}
+
 });
 
 const BitmofModel = mongoose.model('bitmof', myExchange);

@@ -25,10 +25,12 @@
        by: <h3><%= onebitmof.coinFounder %></h3>
      </div>
         <hr>
-      </div>
+        <% });  %>
       <hr>
-      $ : <h3> <%= onebitmof.prices %> </h3>
-<% });  %>
+      <% pricesObjects.forEach((onebitmof) => { %>
+       <h3> <%= onebitmof.coinPrice %> </h3>
+    <% }); %>
+  </div>
 </div>
 
 </div>
