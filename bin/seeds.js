@@ -11,7 +11,7 @@ const bitmofArray = [
        coinName: 'Bitcoin',
        coinTicker: 'BTC',
        coinDate: 2009,
-       coinImage:'https://logok.org/wp-content/uploads/2016/10/Bitcoin-Logo-640x480.png',
+       coinImage:'http://vectorlogo4u.com/wp-content/uploads/2016/06/bitcoin-icon-vector.png',
        coinFounder: "Satoshi Nakamoto",
 
      },
