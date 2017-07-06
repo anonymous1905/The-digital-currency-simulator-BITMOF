@@ -11,7 +11,7 @@ const bitmofArray = [
        coinName: 'Bitcoin',
        coinTicker: 'BTC',
        coinDate: 2009,
-       coinImage:'http://logok.org/wp-content/uploads/2016/10/Bitcoin-Logo-640x480.png',
+       coinImage:'https://logok.org/wp-content/uploads/2016/10/Bitcoin-Logo-640x480.png',
        coinFounder: "Satoshi Nakamoto",
 
      },
@@ -36,7 +36,7 @@ const bitmofArray = [
      coinName: 'Litecoin',
      coinTicker: 'LTC',
      coinDate: 2011,
-     coinImage:'http://ltc.133.io/images/logosizes/ltc800.png',
+     coinImage:'https://ltc.133.io/images/logosizes/ltc800.png',
      coinFounder: "Charlie Lee",
 
    },
@@ -52,7 +52,7 @@ const bitmofArray = [
    coinName: 'Dash',
    coinTicker: 'DASH',
    coinDate: 2014,
-   coinImage:'http://bravenewcoin.com/assets/Coin-Logos/dash.png',
+   coinImage:'https://bravenewcoin.com/assets/Coin-Logos/dash.png',
    coinFounder: "Evan Duffield & Kyle Hagan",
 
  },
