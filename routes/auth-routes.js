@@ -30,7 +30,7 @@ router.post('/signup', (req, res, next) => {
 
         //display Error
 
-      res.render('auth-views/signup-view.ejs');
+      res.render('bitmof/index.ejs');
       return;
     }
 
