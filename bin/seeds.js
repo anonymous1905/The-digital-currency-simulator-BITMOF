@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/bitmof');
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGODB_URI);
 
 const BitmofModel = require('../models/bitmof.js');
 

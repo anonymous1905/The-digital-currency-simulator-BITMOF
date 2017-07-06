@@ -25,31 +25,31 @@
 //     res.redirect('/bitmof');
 //   });
 // });
-//
-//  const totBalance = 20000;
-//
-//  const coinCost = x;
-//
-//  const availableBalance = 20000-x;
-//
-//  function purchase((x) => {
-//
-//
-//    if (x>20000)
-//    console.log('You cannot afford it');
-//
-//    else
-//
-//    console.log('success');
-//
-//
-//
-//  });
-//
-//
+
+ // const totBalance = 20000;
+ //
+ // const coinCost = x;
+ //
+ // const availableBalance = 20000-x;
+
+ // function purchase((x) => {
+ //
+ //
+ //   if (x>20000)
+ //   console.log('You cannot afford it');
+ //
+ //   else
+ //
+ //   console.log('success');
+ //
+ //
+ //
+ // });
 
 
 
 
 
-module.exports = router;
+
+
+// module.exports = router;
