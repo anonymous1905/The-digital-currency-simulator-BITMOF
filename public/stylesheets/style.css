@@ -274,3 +274,8 @@ hr{
   width: 100%;
   color: white;
 }
+
+.ui .secondary .menu{
+  width: 30%;
+  height: 30px;
+}
