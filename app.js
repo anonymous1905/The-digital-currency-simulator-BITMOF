@@ -14,9 +14,8 @@ require('dotenv').config();
 
 require('./config/passport-config.js');
 
-// mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
-mongoose.connect('mongodb://localhost/bitmof');
 const app = express();
 
 // view engine setup

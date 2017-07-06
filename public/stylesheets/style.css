@@ -1,17 +1,41 @@
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: #7B2336;
-  color:white;
+  color:black;
+
+.div.ui.secondary.menu{
+  height: 100px;
+  width: 100%;
 
 }
 
+
+}
+#title{
+font-size: 35px;
+display:inline-block;
+position: relative;
+bottom: 24px;
+color: white;
+font: times;
+}
+/*
+.Navbar > ul > li {
+
+ margin-left: 20px;
+  display: inline;
+  color: grey;
+  margin: 20px 150px 20px 150px;
+  height: 40px;
+  width: 80%;
+}*/
 
 
 
 /*li a:hover {
     background-color: white;*/
-}
 
 .container-fluid{
 color: white;
@@ -21,28 +45,38 @@ a {
   color: #00B7FF;
 }
 #form {
-  margin: 30px auto;
+  margin: 10px auto;
   width: 380px;
+  /*border: 2px solid white;*/
+  border-radius: 8px;
+  height: 30px;
 }
 
 #form label {
-  color: #666;
+  color: white;
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
   width: 100%;
+  margin-top: 10px;
+  height:40px;
+  /*border: 2px solid white;*/
 }
 
 #form input,
-#form button {
+#form button
+ {
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;
   padding: 4px;
   width: 100%;
+  margin-top: 30px
+
+
 }
 
-#form button {
+#form button{
   background: #43a3e6;
   border: 1px solid #43a3e6;
   border-radius: 4px;
@@ -55,11 +89,12 @@ a {
   text-transform: uppercase;
   transition: .3s ease background;
   width: 100%;
+
 }
 
 #form button:hover {
   background: #fff;
-  color: #43a3e6;
+  color: lightgray;
   transition: .3s ease background;
 }
 
@@ -97,7 +132,8 @@ h3 {
 }
 .coins{
 padding: 30px;
-margin-right: 20px;
+margin-right: 10px;
+margin-top: 30px;
 }
 .signUp{
   color: white;
@@ -188,4 +224,53 @@ left: 35px;
   width:400px;
   margin-left: 490px;
 
+}
+
+#butt{
+  width: 60px;
+  height: 60px;
+}
+
+#form{
+  height: 40px;
+  height:20px;
+}
+
+#coin-amount {
+
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 10%;
+  margin-top: 10px
+
+
+}
+
+#c {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 10%;
+  margin-top: 10px
+}
+
+#h2{
+  font-size: 2rem;
+  position: relative;
+  top: 200px;
+  right: 120px;
+}
+
+#form1{
+  position: relative;
+  top: 300px;
+  right: 430px;
+}
+
+hr{
+  width: 100%;
+  color: white;
 }

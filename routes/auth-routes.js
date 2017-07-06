@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 
-// const passport = require('passport');
+const passport = require('passport');
 const UserModel = require('../models/user-model.js');
 
 
@@ -10,22 +10,25 @@ const router = express.Router();
 
 // REGISTRATION ----------------------------------------------------------------
 router.get('/signup', (req, res, next) => {
+  res.render('auth-views/signup-view.ejs');
   // Redirect to home you are already logged in.
-  if (req.user) {
-    res.redirect('/');
-  }
-
-  // If not logged in, show the sign up page.
-  else {
-    res.render('auth-views/signup-view.ejs');
-  }
+  // if (req.user) {
+  //   res.redirect('/');
+  // }
+  //
+  // // If not logged in, show the sign up page.
+  // // else {
+  // }
 });
 
 router.post('/signup', (req, res, next) => {
+
     // Check if username or password are empty.
+
     if (req.body.signupUsername === '' || req.body.signupPassword === '') {
-      // If either of them is, display an error to the user
       res.locals.messageForDumbUsers = 'Please provide both username and password.';
+
+        //display Error
 
       res.render('auth-views/signup-view.ejs');
       return;
@@ -45,9 +48,10 @@ router.post('/signup', (req, res, next) => {
 
           // Check if "userFromDb" is not empty
           if (userFromDb) {
-            // If that's the case, display an error to the user.
-            res.locals.messageForDumbUsers = 'Sorry but that username is taken.';
 
+            // If that's the case, display an error to the user.
+
+            res.locals.messageForDumbUsers = 'Sorry but that username is taken.';
             res.render('auth-views/signup-view.ejs');
             return;
           }
@@ -62,14 +66,15 @@ router.post('/signup', (req, res, next) => {
             encryptedPassword: scrambledPassword
           });
 
+
+
           theUser.save((err) => {
               if (err) {
                 next(err);
                 return;
               }
-
               // Redirect to home if registration is SUCCESSFUL
-              res.redirect('/bitmof');
+              res.redirect('/');
           });
       }
     );
@@ -78,19 +83,20 @@ router.post('/signup', (req, res, next) => {
 
 
 
-const passport = require('passport');
+
 
 // LOG IN ----------------------------------------------------------------------
+
 router.get('/login', (req, res, next) => {
+  res.render('auth-views/login-views.ejs');
   // Redirect to home you are already logged in.
-  if (req.user) {
-    res.redirect('/');
-  }
+  // if (req.user) {
+  // res.redirect('/bitmof');
+  // }
 
   // If not logged in, show the log in page.
-  else {
-    res.render('auth-views/login-views.ejs');
-  }
+  // else {
+  // }
 });
 
 router.post('/login',

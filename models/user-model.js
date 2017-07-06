@@ -18,7 +18,9 @@ const myUserSchema = new Schema(
     // FACEBOOK users ------------------
     facebookId: { type: String },
 
-    simMoney: {type:Number,default:20000}
+    balanceAmount: {type:Number,default:20000,min:0},
+
+    wallet:{type: String}
   },
 
   {   // 2nd argument -> additional settings (optional)

@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type='text/css' href='/stylesheets/style.css'>
+    <link rel="stylesheet" type='text/css' href="/semantic/semantic.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
     <meta charset="utf-8">
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
-    <h1> BITMOF </h1>
+    <h1 id="title"> BITMOF </h1>
     <br>
-    <nav>
-      <ul>
-        <li> <a href="/"> Home </a> </li>
-          <% if (typeof currentUser === 'object') { %>
-            <!-- If we got the logged in user variable -->
-            <br>
-          <li><a href="/bitmof"> Your Portofolio</a></li>
-            <br>
-          <li><a href="/bitmof/new"> Add a Digital Currency </a></li>
-            <br>
-            <li><a href="/logout"> Log Out </a></li>
-            <br>
-        <% } else { %>
-            <li><a href="/signup"> Sign Up </a></li>
-            <br>
-          <li><a href="/login"> Log In </a> </li>
-            <br>
-          <li><a href="/bitmof"> Digital Currencies List </a></li>
-            <br>
-          <li><a href="/bitmof/new"> Add a New Coin </a></li>
-            <%- body %>
-        <% } %>
-      </ul>
-        </nav>
-</style>
+
+      <div class="ui secondary  menu">
+  <a class="active item" href="/">
+    Home
+  </a>
+
+  <% if (typeof currentUser === 'object') { %>
+
+  <a class="item" href="bitmof/portfolio">
+    Your Portfolio
+  </a>
 
 
+  <a class="item" href='/bitmof'>
+    Digital Currency List
+  </a>
+  <a class="item" href='/bitmof/new'>
+    Add a New Coin
+  </a>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
 
+      </div>
+    </div>
+    <a class="ui item" href="/logout">
+      Logout
+    </a>
+  </div>
 
-  </style>
+<% }else { %>
+  <a class="item" href="/signup">
+    Sign Up
+  </a>
+
+  <a class="item" href="/login">
+    Login
+  </a>
+
+</div>
+    <% } %>
+
+      <%- body %>
   </body>
   </html>
