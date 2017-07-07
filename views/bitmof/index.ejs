@@ -12,18 +12,15 @@
 <% bitmofObjects.forEach((onebitmof) => { %>
 
 <div class="allcoins">
-  <div >
     <div class="coins">
    <h3><%= onebitmof.coinTicker  %> </h3>
   <img id='logo' src ="<%= onebitmof.coinImage %>"> </img>
 </div>
 <div class="coins">
    <h3> <%= onebitmof.coinName %>  </h3>
-     <br>
    </div>
    <div class="coins">
         Founded in: <h6> <%= onebitmof.coinDate %></h6>
-       <br>
      </div>
      <div class="coins">
        by: <h6><%= onebitmof.coinFounder %></h6>
@@ -33,6 +30,5 @@
     <% count +=1%>
       <hr>
 
-      </div>
     </div>
         <% });  %>
