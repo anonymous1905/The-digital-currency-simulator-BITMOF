@@ -8,7 +8,7 @@ const router = express.Router();
 
 let cachedApi;
 
-let theApi;
+// let theApi;
 
 router.get('/bitmof', (req, res, next) => {
   BitmofModel.find((err, bitmofResults) => {
@@ -23,19 +23,19 @@ router.get('/bitmof', (req, res, next) => {
       (error, response, body) => {
         if (error) {
           console.log('FUCK', error);
+          next(error);
           return;
         }
-
-        res.render('bitmof/index.ejs', {
-          bitmofObjects: bitmofResults,
-          pricesObjects: pricesArray
-        });
 
         let coinsFromMarket = JSON.parse(body);
 
         cachedApi = coinsFromMarket;
-
-        // let pricesArray = [];
+console.log('');
+console.log('coinsFromMarket 🔇🔇🔇🔇🔇🔇🔇------------------------------');
+console.log(coinsFromMarket);
+console.log(response.statusCode);
+console.log('');
+        let pricesArray = [];
 
 
         bitmofResults.forEach((coin) => { //loop through all db coins
@@ -48,11 +48,15 @@ router.get('/bitmof', (req, res, next) => {
 
             }
           });
-
+          //API request
         });
 
 
-
+          console.log('hi');
+        res.render('bitmof/index.ejs', {
+          bitmofObjects: bitmofResults,
+          pricesObjects: pricesArray
+        });
       }
     );
 
@@ -84,27 +88,27 @@ router.post('/bitmof/new', (req, res, next) => {
 
 
 
-// router.get('/bitmof/buy', (req, res, next) => {
-//   console.log("you here?");
-//   res.render('bitmof/purchase.ejs');
-// });
-//
-// router.post('/bitmof/buy', (req, res, next) => {
-//
-// let coinAmount = req.body.coinAmount;
-// let coinName = req.body.coinName;
-//
-// // console.log(cachedApi);
-//
-// cachedApi.forEach(() => {
-//
-//   if (coin.symbol === coinName){
-//     console.log (req.body.coinPrice * req.body.coinAmount);
-//   }
-//
-//   });
-// });
-// //make post req for /bitmof/buy
+router.get('/bitmof/buy', (req, res, next) => {
+  console.log("you here?");
+  res.render('bitmof/purchase.ejs');
+});
+
+router.post('/bitmof/buy', (req, res, next) => {
+
+let coinAmount = req.body.coinAmount;
+let coinName = req.body.coinName;
+
+console.log('cachedApi');
+
+cachedApi.forEach((coin) => {
+
+  if (coin.symbol === coinName){
+    console.log (req.body.coinPrice *req.body.coinAmount);
+  }
+
+  });
+});
+//make post req for /bitmof/buy
 
 
 
