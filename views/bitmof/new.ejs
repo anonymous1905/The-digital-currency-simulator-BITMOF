@@ -1,20 +1,31 @@
 <h2 id="h2"> Add a Digital Currency </h2>
 <div>
-<form id="form1" method="POST" action="/bitmof">
-  <label for=" coin-name-input"> Enter the coin's name </label>
-  <input id="coin-name" name="coinName" type="text" placeholder="Enter the coin's name">
+
+<form id="form1" method="POST" action="/bitmof/new">
+  <div class="spacing">
+  <label id='label' for=" coin-name-input"> Enter the coin's name </label>
+  <input class="class" id="coin-name" name="coinName" type="text" placeholder="Enter the coin's name">
+</div>
   <br>
-  <label for=" coin-ticker-input"> Enter the Ticker of your Digital Currency </label>
-  <input id="coin-ticker" name="coinTicker" type="text" placeholder="Enter the Ticker of your Digital Currency">
+  <div>
+  <label id='label' for=" coin-ticker-input"> Enter the Ticker of your Digital Currency </label>
+  <input class="class"id="coin-ticker" name="coinTicker" type="text" placeholder="Enter the Ticker of your Digital Currency">
+</div>
   <br>
-  <label for=" coin-date-input"> Enter the Date it was Founded </label>
-  <input id="coin-date" name="coinDate" type="number" min="1" placeholder="Enter the Date it was Founded">
+  <div>
+  <label id='labela1' for=" coin-date-input"> Enter the Date it was Founded </label>
+  <input class="class" id="coin-date" name="coinDate" type="number" min="1" placeholder="Enter the Date it was Founded">
+</div>
   <br>
-  <label for=" coin-image-input"> Enter the logo's link or image </label>
-  <input id="coin-image" name="coinImage" type="url" name" New digital currency">
+  <div>
+  <label  id='label' for=" coin-image-input"> Enter the logo's link or image </label>
+  <input class='class' id="coin-image" name="coinImage" type="url" name" New digital currency">
+</div>
   <br>
-  <label for=" coin-founder-input"> Enter the coin's Founders</label>
-  <input id="coin-founder" name="coinFounder" type="text"  placeholder="Who found it ? ">
-  <button> Add! </button>
+  <div class="spacing">
+  <label id='label' for=" coin-founder-input"> Enter the coin's Founders</label>
+  <input class="class" id="coin-founder" name="coinFounder" type="text"  placeholder="Who found it ? ">
+  <button class='button1'> Add! </button>
+</div>
 </form>
 </div>

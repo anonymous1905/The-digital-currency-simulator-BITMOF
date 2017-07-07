@@ -20,6 +20,7 @@ router.get('/signup', (req, res, next) => {
   // // else {
   // }
 });
+console.log('1');
 
 router.post('/signup', (req, res, next) => {
 
@@ -43,7 +44,7 @@ router.post('/signup', (req, res, next) => {
             next(err);
             return;
           }
-
+          console.log('2');
           // If the username is not taken, the "userFromDb" variable will be empty.
 
           // Check if "userFromDb" is not empty

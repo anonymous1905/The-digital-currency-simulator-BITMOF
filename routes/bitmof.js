@@ -1,5 +1,7 @@
 const express = require('express');
 
+const UserModel = require('../models/user-model.js');
+
 const BitmofModel = require('../models/bitmof.js');
 
 var request = require('request');
@@ -8,15 +10,15 @@ const router = express.Router();
 
 let cachedApi;
 
-// let theApi;
+let theApi;
 
 router.get('/bitmof', (req, res, next) => {
-  BitmofModel.find((err, bitmofResults) => {
+  BitmofModel.find({},(err, bitmofResults) => {
     if (err) {
       next(err);
       return;
     }
-
+console.log(bitmofResults);
     let pricesArray = [];
     request(
       `https://api.coinmarketcap.com/v1/ticker/`,
@@ -70,6 +72,7 @@ router.get('/bitmof/new', (req, res, next) => {
 });
 
 router.post('/bitmof/new', (req, res, next) => {
+  console.log('hahahahahahahahaha');
   const daBitmof = new BitmofModel({
     coinName: req.body.coinName,
     coinTicker: req.body.coinTicker,
@@ -91,29 +94,60 @@ router.post('/bitmof/new', (req, res, next) => {
 router.get('/bitmof/buy', (req, res, next) => {
   console.log("you here?");
   res.render('bitmof/purchase.ejs');
+  console.log('lets do it');
 });
 
 router.post('/bitmof/buy', (req, res, next) => {
 
 let coinAmount = req.body.coinAmount;
 let coinName = req.body.coinName;
-
-console.log('cachedApi');
-
+let total = coinAmount;
+console.log('YOOOO MANNNNN??');
+// console.log(cachedApi);
 cachedApi.forEach((coin) => {
-
-  if (coin.symbol === coinName){
-    console.log (req.body.coinPrice *req.body.coinAmount);
+// console.log(' TOTTI  ');
+  if (coin.name === coinName){
+   total *= coin.price_usd;
+console.log (coin.price_usd *req.body.coinAmount + "USD");
   }
-
   });
+console.log("hellloooo");
+  UserModel.findByIdAndUpdate(req.user._id, {
+    $set: {balanceAmount: req.user.balanceAmount - total,
+      wallet: `${req.body.coinName} for ${req.body.coinAmount}`},
+      $push: {wallet:wallet}
+     },(err, result) => {
+        UserModel.update(
+
+    );
+      let balanceAmount = req.user.balanceAmount - total;
+      let wallet = req.body.coinName + req.body.coinAmount;
+      // let wallet = all the coin names invested in
+      res.render('bitmof/portfolio.ejs', {
+        total: total,
+        balanceAmount: balanceAmount,
+        wallet: wallet
+
+      });
+    });
+
+
+
+
+
 });
-//make post req for /bitmof/buy
 
 
 
 
-// get inputs and save them
+// router.get('/bitmof/', (req, res, next) =>{
+// res.render('bitmof/portfolio.ejs');
+// });
+
+
+
+
+
 
 
 

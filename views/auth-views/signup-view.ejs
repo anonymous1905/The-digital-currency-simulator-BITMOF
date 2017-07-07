@@ -1,5 +1,7 @@
 <!-- <h2> Sign Up </h2> -->
 
+<!-- <img id="forbes" src="./images/forbes.jpg"> -->
+<p id="tony"> Powered by AMCorps ®️</p>
 
 <!-- We use typeof here to avoid an error
      since the variable sometimes doesn't exist. -->
@@ -7,28 +9,21 @@
   <p class="error-message"> <%= messageForDumbUsers %> </p>
 <% } %>
 
-<form id="form" method="post" action="/signup">
-  <label for="full-name-input"> Your Name </label>
-  <input  id="full-name-input" type="text" name="signupFullName"
+<form class='forma1'id="form" method="post" action="/signup">
+  <label class="labela1" for="full-name-input"> Your Name </label>
+  <input class=" inputa1" id="full-name-input" type="text" name="signupFullName"
       placeholder="Your Name">
   <br>
 
-  <label for="username-input"> Username </label>
-  <input  id="username-input" type="text" name="signupUsername"
+  <label class="labela2" for="username-input"> Username </label>
+  <input class="inputa2"  id="username-input" type="text" name="signupUsername"
       placeholder="Cryptomaniac">
   <br>
 
-  <label for="password-input"> Password </label>
-  <input  id="password-input" type="password" name="signupPassword"
+  <label class="labela5" for="password-input"> Password </label>
+  <input class="inputa5"  id="password-input" type="password" name="signupPassword"
       placeholder="**********">
   <br>
 
-  <button> Sign Up </button>
+  <button id="buttona1"> Sign Up </button>
 </form>
-
-<a href="/auth/facebook"> Log In with Facebook </a>
-<br>
-<a href="/auth/google"> Log In with Google </a>
-<br>
-
-<p> Powered by AMCorps ®️</p>
